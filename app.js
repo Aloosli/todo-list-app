@@ -43,9 +43,9 @@ function deleteCheck(e) {
     const todo = item.parentElement;
     // Animation
     todo.classList.add("fall");
-
-
-    
+    todo.addEventListener("transitionend", function () {
+      todo.remove();
+    });
   }
 
   // Check Mark
