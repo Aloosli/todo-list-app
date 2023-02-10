@@ -41,7 +41,7 @@ function addTodo(e) {
   //attach final Todo
   todoList.appendChild(todoDiv);
 }
-
+// Delete Todo
 function deleteTodo(e) {
   const item = e.target;
 
@@ -61,7 +61,7 @@ function deleteTodo(e) {
     console.log(todo);
   }
 }
-
+// Filter Todo
 function filterTodo(e) {
   const todos = todoList.childNodes;
   todos.forEach(function(todo) {
@@ -85,7 +85,7 @@ function filterTodo(e) {
     }
   });
 }
-
+// Save to local
 function saveLocalTodos(todo) {
   let todos;
   if (localStorage.getItem("todos") === null) {
@@ -96,6 +96,7 @@ function saveLocalTodos(todo) {
   todos.push(todo);
   localStorage.setItem("todos", JSON.stringify(todos));
 }
+// Remove from local
 function removeLocalTodos(todo) {
   let todos;
   if (localStorage.getItem("todos") === null) {
@@ -107,7 +108,7 @@ function removeLocalTodos(todo) {
   todos.splice(todos.indexOf(todoIndex), 1);
   localStorage.setItem("todos", JSON.stringify(todos));
 }
-
+// Get from local
 function getTodos() {
   let todos;
   if (localStorage.getItem("todos") === null) {
